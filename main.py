@@ -3,7 +3,7 @@ import numpy as np
 import torch
 
 # Constants
-material_y_width = 100
+material_y_width = 500
 material_x_z_width = 10
 distance_between_electrons = 5
 # The number_of_electrons_wide should be an odd number so that we get an electron at the middle of each layer
@@ -13,8 +13,8 @@ number_of_electrons_wide = material_x_z_width // distance_between_electrons * 2 
 material_y_width = material_y_width + material_y_width % distance_between_electrons
 number_of_layers = material_y_width // distance_between_electrons + 1
 charge_electron = 1 / number_of_electrons_wide ** 2  # this is to ensure the amount of charge per layer is constant
-TIME_END = 100
-TIME_STEPS = 100
+TIME_END = 200
+TIME_STEPS = 200
 DT = TIME_END / TIME_STEPS
 start_y = 25 # this is where we will start plotting y from
 # It is easier to compute the electric field at the electron positions if the evaluation points match the integer values of the y-coordinate
