@@ -5,7 +5,9 @@ import torch
 # Constants
 material_y_width = 100
 material_x_z_width = 10
-number_of_electrons_wide = 5 # This should be an odd number so that we get an electron at the middle of each layer
+distance_between_electrons = 5
+# The number_of_electrons_wide should be an odd number so that we get an electron at the middle of each layer
+number_of_electrons_wide = material_x_z_width // distance_between_electrons * 2 + 1
 # It is easier to compute the electric field at the electron positions if the electron layers have integer value y-coordinate
 distance_between_layers = 10
 # Make sure that material_y_width is divisible by distance_between_layers
